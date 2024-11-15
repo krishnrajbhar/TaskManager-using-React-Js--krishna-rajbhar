@@ -53,34 +53,35 @@ const TaskManager = () => {
         });
 
     return (
-        <div style={{ maxWidth: '500px', margin: '0 auto' }}>
-            <h1>Task Manager</h1>
+    <div className='main'>
+        <div style={{ maxWidth: '500px', margin: '0 auto' , textAlign:'center'}}>
+            <h1>Task - Manager</h1>
 
             {/* Task Input */}
-            <div>
-                <input
+            <div className='task-section'>
+                <input className='task-input'
                     type="text"
-                    placeholder="Add a task"
+                    placeholder="Add a new task"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+                <select className='select-option' value={priority} onChange={(e) => setPriority(e.target.value)}>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
-                <button onClick={addTask}>Add Task</button>
+                <button className='addtaskbtn' onClick={addTask}>Add Task</button>
             </div>
 
             {/* Search and Sort */}
-            <div>
-                <input
+            <div className='task-section'>
+                <input className='task-input'
                     type="text"
                     placeholder="Search tasks"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                <select value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
+                <select className='select-option' value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
                     <option value="date">Date Added</option>
                     <option value="priority">Priority</option>
                     <option value="title">Title</option>
@@ -93,13 +94,14 @@ const TaskManager = () => {
                     <li
                         key={task.id}
                         style={{
+                            height:"50px",
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
                             padding: '10px',
                             borderBottom: '1px solid #ccc',
                             transition: 'background 0.3s',
-                            backgroundColor: task.completed ? '#d4edda' : 'white',
+                            backgroundColor: task.completed ? '#d4edda' : 'aliceblue',
                         }}
                     >
                         <div style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
@@ -110,13 +112,14 @@ const TaskManager = () => {
                             />
                             <strong>[{task.priority.toUpperCase()}]</strong> {task.title}
                         </div>
-                        <button onClick={() => deleteTask(task.id)} style={{ marginLeft: '10px' }}>
+                        <button onClick={() => deleteTask(task.id)} style={{ marginLeft: '10px',backgroundColor:'red',color:'white', height:'30px', width:'100px',borderRadius:'5px',border:'none' }}>
                             Delete
                         </button>
                     </li>
                 ))}
             </ul>
         </div>
+    </div>
     );
 };
 

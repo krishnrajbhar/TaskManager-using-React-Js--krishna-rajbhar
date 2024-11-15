@@ -1,6 +1,41 @@
-ul li{
-    border-radius: 20px;
-    border: 1px solid black;
-    height: 300px;
-    width: 300px;
+.task-section{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: lightgrey;
+    height: 150px;
+    width: 500px;
+    
+}
+.task-input{
+    border-radius: 5px;
+    height: 30px;
+    width: 200px;
+    border:2px solid black;
+    margin: 10px;
+}
+.task-input::placeholder{
+    padding: 10px;
+}
+
+.addtaskbtn{
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: rgb(4, 174, 4);
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+}
+.select-option{
+    background: black;
+    border: none;
+    color: white;
+    height: 25px;
+    width: 100px;
+    border-radius: 3px;
+
 }
